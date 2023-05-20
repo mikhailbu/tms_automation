@@ -1,0 +1,30 @@
+
+package helpers;
+
+//import readProperties.ConfigProvider;
+
+import java.util.Random;
+
+public class StringModifier {
+
+//    public static String getUniqueString(String str) {
+//        return str + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//    }
+
+    public static void emailRandom() {
+        Random random = new Random();
+        String randomNumber = String.valueOf(random.nextInt(10000));
+        TestValues.NEW_TEST_LOGIN = ("latest_0" + randomNumber);
+        TestValues.NEW_TEST_EMAIL = ("latest_0" + randomNumber + "@gmail.com");
+        System.out.println("Новый email:" + TestValues.NEW_TEST_LOGIN);
+        System.out.println("Новый login:" + TestValues.NEW_TEST_EMAIL);
+
+
+    }
+    public static void phoneRandom(){
+        Random random = new Random();
+        Integer volume = (random.nextInt(10000)+1000000000);
+        TestValues.NEW_TEST_PHONE = String.valueOf(volume);
+        System.out.println("Новый номер:" + volume);
+    }
+}
