@@ -11,5 +11,5 @@ public class TestValues {
     public static String NEW_TEST_PHONE = "79001112233";
     public static String NEW_TEST_LOGIN = "latest_0001";
     public static String LOGIN_URL = "https://firetms.ru/sign";
-    public static String LOGIN_URL1 = "https://firetms.ru/sign";
+    public static String NEW_TEST_LOGIN1 = "latest_0001";
 }
