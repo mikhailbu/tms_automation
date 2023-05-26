@@ -1,10 +1,12 @@
-BasePage.java
- BasePage
 test/LoginTest.java
  test.LoginTest
-helpers/StringModifier.java
- helpers.StringModifier
-helpers/TestValues.java
- helpers.TestValues
 test/RegistrationTest.java
  test.RegistrationTest
+helpers/TestValues.java
+ helpers.TestValues
+helpers/StringModifier.java
+ helpers.StringModifier
+test/BaseTest.java
+ test.BaseTest
+pages/LoginPage.java
+ pages.LoginPage

@@ -1,47 +1,73 @@
 package test;
 
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import helpers.StringModifier;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.CollectionCondition.texts;
-import static com.codeborne.selenide.Condition.disabled;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byAttribute;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.TestValues.*;
 
-public class RegistrationTest {
+
+public class RegistrationTest extends BaseTest {
+
+
     @Test
-    void registrationRandomTest() {
+    void registrationRandomValueTest() {
+
         StringModifier.emailRandom();
+        loginPage.openPageLogin(LOGIN_URL)
+                .setEmail(NEW_TEST_EMAIL)
+                .setLogin(NEW_TEST_LOGIN)
+                .setPasswordFirst(NEW_TEST_PASSWORD)
+                .setPasswordSecond(NEW_TEST_PASSWORD)
+                .submitForm();
+        List<String> links = new ArrayList<>();
+        listAdd(links);
+//        links.forEach(System.out::println);
+//        links.forEach(Selenide::open);
+    }
+
+    void listAdd (List<String> list) {
+        ElementsCollection elementsList = $$x("//div[@class='actions-after-registration__action']//a");
+        elementsList.forEach(x -> list.add(x.getAttribute("href")));
+    }
+    //TODO дописать ветвление после регистрации
 
 
-        open(LOGIN_URL);
-        $("input[type='text']").setValue(NEW_TEST_EMAIL).pressEnter();
-        $("input[placeholder='User login']").setValue(NEW_TEST_LOGIN).pressEnter();
-        $$("input[type=password]").first().setValue(NEW_TEST_PASSWORD).pressEnter();
-        $$("input[type=password]").get(1).setValue(NEW_TEST_PASSWORD);
-        $("button[type='submit']").shouldNotBe(disabled).click();
-        ElementsCollection results = $$("div.actions-after-registration__list");
-        for (SelenideElement element : results){
-            element.shouldHave(textsINAnyOrder(
-                    "- Создать первое рабочее пространство",
-                    "- Создать демонстрационный проект",
-                    "- Перейти к рабочему столу"));
-        }
+//        List<String> links = new ArrayList<>();
+//        for (SelenideElement selenideElement : href) {
+//            links.add(selenideElement.getAttribute("href"));
+
+    //            printList(lists);
+    int x = 1;
+
+    private static void printList(List<String> list) {
+        list.forEach(System.out::println);
+    }
+}
+
+//            element.shouldHave(textsINAnyOrder(
+//                    "- Создать первое рабочее пространство",
+//                    "- Создать демонстрационный проект",
+//                    "- Перейти к рабочему столу"));
+
 
 //        shouldHave(texts(
 //                        "- Создать первое рабочее пространство",
 //                        "- Создать демонстрационный проект",
 //                        "- Перейти к рабочему столу"));
-    //TODO дописать ветвление после регистрации
 
-        $(byAttribute("a","https://firetms.ru/desktop")).click();
-
-
-        new LoginTest()
-                .loginTest();
-    }
-}
+//        $(byAttribute("a","https://firetms.ru/desktop")).click();
+//
+//
+//        new LoginTest()
+//                .loginTest();
+//    }
+//}
