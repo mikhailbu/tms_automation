@@ -10,6 +10,6 @@ public class TestValues {
     public static String NEW_TEST_FIRST_NAME = "\u0418\u0432\u0430\u043d\u043e\u0432";
     public static String NEW_TEST_PHONE = "79001112233";
     public static String NEW_TEST_LOGIN = "latest_0001";
-    public static String LOGIN_URL = "https://firetms.ru/sign";
-    public static String NEW_TEST_LOGIN1 = "latest_0001";
+    public static String LOGIN_URL = "/sign";
+
 }
