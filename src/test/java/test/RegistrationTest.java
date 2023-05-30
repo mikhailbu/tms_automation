@@ -1,18 +1,17 @@
 package test;
 
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
 import helpers.StringModifier;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.open;
 import static helpers.TestValues.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class RegistrationTest extends BaseTest {
@@ -21,20 +20,31 @@ public class RegistrationTest extends BaseTest {
     @Test
     void registrationRandomValueTest() {
 
-        StringModifier.emailRandom();
+        StringModifier.emailAndLoginRandom();
         loginPage.openPageLogin(LOGIN_URL)
+                .checkTitle("Вход в учетную запись","h4")
                 .setEmail(NEW_TEST_EMAIL)
                 .setLogin(NEW_TEST_LOGIN)
-                .setPasswordFirst(NEW_TEST_PASSWORD)
-                .setPasswordSecond(NEW_TEST_PASSWORD)
+                .setPasswordFirst(TEST_PASSWORD)
+                .setPasswordSecond(TEST_PASSWORD)
                 .submitForm();
         List<String> links = new ArrayList<>();
-        listAdd(links);
+        listAddElement(links);
+
+        for (int i = 0; i < links.size(); i++) {
+            String elemLinks = links.get(i);
+            open(elemLinks);
+            String elemUrl = WebDriverRunner.getWebDriver().getCurrentUrl();
+            assertEquals(elemLinks, elemUrl);
+
+        }
+
 //        links.forEach(System.out::println);
 //        links.forEach(Selenide::open);
     }
 
-    void listAdd (List<String> list) {
+
+    void listAddElement(List<String> list) {
         ElementsCollection elementsList = $$x("//div[@class='actions-after-registration__action']//a");
         elementsList.forEach(x -> list.add(x.getAttribute("href")));
     }
@@ -47,11 +57,8 @@ public class RegistrationTest extends BaseTest {
 
     //            printList(lists);
     int x = 1;
-
-    private static void printList(List<String> list) {
-        list.forEach(System.out::println);
-    }
 }
+
 
 //            element.shouldHave(textsINAnyOrder(
 //                    "- Создать первое рабочее пространство",
