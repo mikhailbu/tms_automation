@@ -11,13 +11,13 @@ public class StringModifier {
 //        return str + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 //    }
 
-    public static void emailRandom() {
+    public static void emailAndLoginRandom() {
         Random random = new Random();
         String randomNumber = String.valueOf(random.nextInt(10000));
         TestValues.NEW_TEST_LOGIN = ("latest_0" + randomNumber);
         TestValues.NEW_TEST_EMAIL = ("latest_0" + randomNumber + "@gmail.com");
-        System.out.println("Новый email:" + TestValues.NEW_TEST_LOGIN);
-        System.out.println("Новый login:" + TestValues.NEW_TEST_EMAIL);
+        System.out.println("Новый email:" + TestValues.NEW_TEST_EMAIL);
+        System.out.println("Новый login:" + TestValues.NEW_TEST_LOGIN);
 
 
     }
