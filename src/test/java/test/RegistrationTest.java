@@ -13,7 +13,7 @@ public class RegistrationTest extends BaseTest {
         List<String> links = new ArrayList<>();
 
         StringModifier.emailAndLoginRandom();
-        loginPage.openPageLogin(LOGIN_URL)
+        loginPage.openPage(BASE_URL,LOGIN_URL)
                 .checkTitle("Вход в учетную запись", "h4")
                 .setEmail(NEW_TEST_EMAIL)
                 .setLogin(NEW_TEST_LOGIN)

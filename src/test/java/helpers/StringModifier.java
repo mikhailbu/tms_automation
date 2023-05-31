@@ -19,6 +19,14 @@ public class StringModifier {
         System.out.println("Новый email:" + TestValues.NEW_TEST_EMAIL);
         System.out.println("Новый login:" + TestValues.NEW_TEST_LOGIN);
 
+    }
+    public static void nameWorkspaceAndShortNameWorkSpaceRandom() {
+        Random random = new Random();
+        String randomNumber = String.valueOf(random.nextInt(10000));
+        TestValues.NEW_NAME_WORKSPACES = ("WORK" + randomNumber);
+        TestValues.NEW_NAME_SHORT_WORKSPACES = ("work" + randomNumber);;
+        System.out.println("Новый nameWorkSpace:" + TestValues.NEW_NAME_WORKSPACES);
+        System.out.println("Новый nameShortWorkSpace:" + TestValues.NEW_NAME_SHORT_WORKSPACES);
 
     }
     public static void phoneRandom(){
