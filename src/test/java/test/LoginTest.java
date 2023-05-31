@@ -5,7 +5,7 @@ public class LoginTest extends BaseTest{
 
     @Test
     void loginTest ()  {
-        loginPage.openPageLogin(LOGIN_URL)
+        loginPage.openPage(BASE_URL,LOGIN_URL)
                 .checkTitle("Вход в учетную запись", "h4")
                 .setEmail(TEST_EMAIL)
                 .setPasswordFirst(TEST_PASSWORD)

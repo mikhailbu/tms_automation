@@ -17,8 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LoginPage {
 
-    public LoginPage openPageLogin(String url) {
-        open(url);
+    public LoginPage openPage(String baseUrl, String openUrl) {
+        open(baseUrl+openUrl);
         return this;
     }
 
