@@ -9,7 +9,7 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
-//        Configuration.baseUrl = "https://firetms.ru";
+        Configuration.baseUrl = "https://firetms.ru";
         Configuration.browserSize = "1980x1080";
 
     }

@@ -2,11 +2,11 @@ helpers/TestValues.java
  helpers.TestValues
 helpers/StringModifier.java
  helpers.StringModifier
-pages/LoginPage.java
- pages.LoginPage
+test/LoginTest.java
+ test.LoginTest
 test/RegistrationTest.java
  test.RegistrationTest
 test/BaseTest.java
  test.BaseTest
-test/LoginTest.java
- test.LoginTest
+pages/LoginPage.java
+ pages.LoginPage

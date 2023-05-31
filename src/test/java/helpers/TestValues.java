@@ -17,7 +17,6 @@ public class TestValues {
 
 
     public static String LOGIN_URL = "/sign";
-    public static String LOGIN_URLS = "https://firetms.ru/sign";
     public static String DESKTOP_URL = "https://firetms.ru/desktop";
 
 }
