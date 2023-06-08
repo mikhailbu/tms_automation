@@ -1,18 +1,20 @@
-helpers/StringModifier.java
- helpers.StringModifier
-helpers/TestValues.java
- helpers.TestValues
-pages/LoginPage.java
- pages.LoginPage
 test/LoginTest.java
  test.LoginTest
 test/RegistrationTest.java
  test.RegistrationTest
+pages/WorkspacePage.java
+ pages.WorkspacePage
 test/CreateWorkspace.java
  test.CreateWorkspace
 test/CreateProject.java
  test.CreateProject
+helpers/TestValues.java
+ helpers.TestValues
+helpers/StringModifier.java
+ helpers.StringModifier
 test/BaseTest.java
  test.BaseTest
-pages/WorkspacePage.java
- pages.WorkspacePage
+pages/LoginPage.java
+ pages.LoginPage
+test/CreateTestCase.java
+ test.CreateTestCase
