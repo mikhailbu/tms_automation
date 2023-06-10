@@ -1,9 +1,11 @@
+pages/WorkspacePage.java
+ pages.WorkspacePage
 test/LoginTest.java
  test.LoginTest
 test/RegistrationTest.java
  test.RegistrationTest
-pages/WorkspacePage.java
- pages.WorkspacePage
+pages/LoginPage.java
+ pages.LoginPage
 test/CreateWorkspace.java
  test.CreateWorkspace
 test/CreateProject.java
@@ -14,7 +16,5 @@ helpers/StringModifier.java
  helpers.StringModifier
 test/BaseTest.java
  test.BaseTest
-pages/LoginPage.java
- pages.LoginPage
 test/CreateTestCase.java
  test.CreateTestCase

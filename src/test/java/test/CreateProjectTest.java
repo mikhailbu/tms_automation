@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static helpers.TestValues.*;
 import static helpers.TestValues.TEST_PASSWORD;
 
-public class CreateProject extends BaseTest {
+public class CreateProjectTest extends BaseTest {
     @Test
     void createWorkspace() {
         StringModifier.nameWorkspaceAndShortNameWorkSpaceRandom();
