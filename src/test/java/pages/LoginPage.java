@@ -98,7 +98,7 @@ public class LoginPage {
             open(elemLinks);
             String elemUrl = getWebDriver().getCurrentUrl();
             assertEquals(elemLinks, elemUrl);
-            if (elemUrl.equals(DESKTOP_URL)) {
+            if (elemUrl.equals(BASE_URL+DESKTOP_URL)) {
                 LoginPage loginPage = new LoginPage();
                 loginPage.optionMenu("Мой профиль")
                         .checkTitle("Информация", "h4")

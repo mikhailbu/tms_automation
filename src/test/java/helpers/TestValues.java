@@ -11,9 +11,10 @@ public class TestValues {
     public static String TEST_PHONE = "79001112233";
     public static String TEST_LOGIN = "latest_0001";
     public static String TEST_NAME_WORKSPACES = "WORK";
-    public static String TEST_SHORT_WORKSPACES = "work1";
+    public static String TEST_NAME_SHORT_WORKSPACES = "work12";
     public static String TEST_NAME_PROJECT = "PROJECT";
     public static String TEST_NAME_SHORT_PROJECT = "pr1";
+    public static String TEST_NAME_BASIC_SECTION = "Основной раздел";
 
     public static String NEW_TEST_EMAIL = "";
     public static String NEW_TEST_LOGIN = "";
@@ -24,8 +25,30 @@ public class TestValues {
 
     public static String BASE_URL = "https://firetms.ru";
     public static String LOGIN_URL = "/sign";
-    public static String DESKTOP_URL = "https://firetms.ru/desktop";
-    public static String WORKSPACES_URL = "https://firetms.ru/workspaces";
+    public static String DESKTOP_URL = "/desktop";
+    public static String WORKSPACES_URL = "/workspaces";
 
+    /**
+     * Workspaces_url
+     */
+    public static String WORKSPACES_BASE_URL = "https://" + TEST_NAME_SHORT_WORKSPACES +".firetms.ru";
+    public static String WORKSPACES_MEMBERS_URL= "/members";
+    /**
+     * Project_url
+     */
+
+    public static String PROJECT_BASE_URL = "https://" + TEST_NAME_SHORT_WORKSPACES + ".firetms.ru/p/"+TEST_NAME_SHORT_PROJECT;
+    public static String PROJECT_CASES_URL = "/cases";
+    public static String PROJECT_PLANS_URL = "/plans";
+    public static String PROJECT_RUNS_URL = "/runs";
+    public static String PROJECT_MILESTONES_URL = "/milestones";
+
+
+
+    public static String TEST_CASE_TITLE_INFO = TEST_BODY + "Информация";
+    public static String TEST_CASE_NAME = "Новый тест кейс";
+    public static String TEST_CASE_TITLE_PRECONDITION = TEST_BODY + "Предусловие";
+    public static String TEST_CASE_STEP_DESCRIPTION = "Описание шага";
+    public static String TEST_CASE_STEP_RESULT = "Результат шага";
 
 }
