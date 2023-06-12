@@ -3,6 +3,7 @@ package test;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
 import org.junit.jupiter.api.BeforeAll;
+import pages.CasesPage;
 import pages.LoginPage;
 import pages.WorkspacePage;
 
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class BaseTest {
     LoginPage loginPage = new LoginPage();
     WorkspacePage workspacePage = new WorkspacePage();
+    CasesPage casesPage = new CasesPage();
 
     @BeforeAll
     static void beforeAll() {

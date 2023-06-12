@@ -1,7 +1,9 @@
-test/LoginTest.java
- test.LoginTest
 pages/WorkspacePage.java
  pages.WorkspacePage
+test/LoginTest.java
+ test.LoginTest
+test/CreateWorkspaceTest.java
+ test.CreateWorkspaceTest
 test/RegistrationTest.java
  test.RegistrationTest
 test/CreateProjectTest.java
@@ -14,7 +16,7 @@ test/BaseTest.java
  test.BaseTest
 pages/LoginPage.java
  pages.LoginPage
-test/CreateWorkspaceTest.java
- test.CreateWorkspaceTest
+pages/CasesPage.java
+ pages.CasesPage
 test/CreateTestCaseTest.java
  test.CreateTestCaseTest

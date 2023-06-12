@@ -42,4 +42,13 @@ public class TestValues {
     public static String PROJECT_PLANS_URL = "/plans";
     public static String PROJECT_RUNS_URL = "/runs";
     public static String PROJECT_MILESTONES_URL = "/milestones";
+
+
+
+    public static String TEST_CASE_TITLE_INFO = TEST_BODY + "Информация";
+    public static String TEST_CASE_NAME = "Новый тест кейс";
+    public static String TEST_CASE_TITLE_PRECONDITION = TEST_BODY + "Предусловие";
+    public static String TEST_CASE_STEP_DESCRIPTION = "Описание шага";
+    public static String TEST_CASE_STEP_RESULT = "Результат шага";
+
 }

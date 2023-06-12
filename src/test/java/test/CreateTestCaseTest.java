@@ -13,79 +13,53 @@ import static helpers.TestValues.*;
 public class CreateTestCaseTest extends BaseTest {
     @Test
     void createTestCase() {
-        List<String> links = new ArrayList<>();
         loginPage.openPage(BASE_URL, LOGIN_URL)
                 .checkTitle("Вход в учетную запись", "h4")
                 .setEmail(TEST_EMAIL)
                 .setPasswordFirst(TEST_PASSWORD);
         workspacePage.switchSideMenu("Мои пространства")
                 .selectWorkspace(TEST_NAME_WORKSPACES);
-       $$("td.align-middle div div").findBy(text(TEST_NAME_SHORT_PROJECT)).doubleClick();
-        workspacePage.clickBtn("+ Раздел");
-        workspacePage.checkTitle("Новый раздел","div.modal-simple__content h5");
-       $("input#section_title_input").setValue(TEST_NAME_BASIC_SECTION);
-       $("div.modal-simple select.form-select").selectOption("Корневой раздел");
-       $("div.modal-simple textarea.form-control").setValue(TEST_BODY);
-       workspacePage.clickBtn("Сохранить");
-       workspacePage.checkTitle(TEST_NAME_BASIC_SECTION,"div.cases__content h5");
-       workspacePage.clickBtn("+ Кейс");
-       workspacePage.checkTitle("Новая запись","div.card-header h5");
-       executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+        $$("td.align-middle div div").findBy(text(TEST_NAME_SHORT_PROJECT)).doubleClick();
+        casesPage.clickBtn("+ Раздел");
+        casesPage.checkTitle( "div.modal-simple__content h5", "Новый раздел");
+        casesPage.setNameSection(TEST_NAME_BASIC_SECTION)
+                .selectOptionSection("Корневой раздел")
+                .setDescriptionSection(TEST_BODY)
+                .clickBtn("Сохранить")
+                .checkTitle("div.cases__content h5",TEST_NAME_BASIC_SECTION)
+                .clickBtn("+ Кейс")
+                .checkTitle("div.card-header h5","Новая запись");
 
-       $("input.form-control[placeholder]").setValue(TEST_TITLE);
-        $("select#section").selectOption("Основной раздел");
+        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+        casesPage.selectOptionCase("section","Основной раздел")
+                .selectOptionCase("status_id","Draft")
+                .selectOptionCase("type_id","Smoke")
+                .selectOptionCase("priority_id","High")
+                .selectOptionCase("severity_id","Blocker");
         $("select#responsible_id").selectOption(0);
-        $("select#status_id").selectOption("Draft");
-        $("select#type_id").selectOption("Smoke");
-        $("select#priority_id").selectOption("High");
-        $("select#priority_id").selectOption("High");
-        $("select#severity_id").selectOption("Blocker");
-       $$("div[aria-owns='quill-mention-list']").get(0).setValue(TEST_BODY + "Информация");
-       $$("div[aria-owns='quill-mention-list']").get(1).setValue(TEST_BODY + "Предусловие");
-       $$("div[aria-owns='quill-mention-list']").get(2).setValue(TEST_BODY + "Шаг 1: Описание шага!");
-       $$("div[aria-owns='quill-mention-list']").get(3).setValue(TEST_BODY + "Шаг 1: Ожидаемый результат!");
-       $$("div[aria-owns='quill-mention-list']").get(4).setValue(TEST_BODY + "Шаг 2: Описание шага");
-       $$("div[aria-owns='quill-mention-list']").get(5).setValue(TEST_BODY + "Шаг 2: Ожидаемый результат");
-       workspacePage.clickBtn("Сохранить и перейти к записи");
-//       $$(".btns-group button").findBy(text("Сохранить и перейти к записи")).click();
-       workspacePage.checkTitle(TEST_TITLE,"div.card-body h5");
-       workspacePage.checkTitle(TEST_TITLE,"div.card-body h2");
-       $x("//h4[text()='Информация']//following::div[1]//p")
-               .shouldHave(text(TEST_BODY + "Информация"));
-       $x("//h4[text()='Предусловие']//following::div[1]//p")
-               .shouldHave(text(TEST_BODY + "Предусловие"));
+        casesPage.setNameCase(TEST_CASE_NAME)
+                .setDescriptionCase("Информация ",TEST_CASE_TITLE_INFO)
+                .setDescriptionCase("Предусловие ",TEST_CASE_TITLE_PRECONDITION)
+                .setDescriptionStepCase("Шаг 1","Описание шага",TEST_CASE_STEP_DESCRIPTION)
+                .setDescriptionStepCase("Шаг 1","Ожидаемый результат",TEST_CASE_STEP_RESULT)
+                .setDescriptionStepCase("Шаг 2","Описание шага",TEST_CASE_STEP_DESCRIPTION)
+                .setDescriptionStepCase("Шаг 2","Ожидаемый результат",TEST_CASE_STEP_RESULT)
+                .clickBtn("Сохранить и перейти к записи");
 
-       $x("//div[text()='Шаг № 1']//following::div[text()='Описание:']/following::div[1]//p")
-               .shouldHave(text(TEST_BODY + "Шаг 1: Описание шага!"));
-       $x("//div[text()='Шаг № 1']//following::div[text()='Результат:']/following::div[1]//p")
-               .shouldHave(text(TEST_BODY + "Шаг 1: Ожидаемый результат!"));
-
-       $x("//div[text()='Шаг № 2']//following::div[1]/following::div[1]//p")
-               .shouldHave(text(TEST_BODY + "Шаг 2: Описание шага"));
-        $x("//div[text()='Шаг № 2']//following::div[text()='Результат:']/following::div[1]//p")
-                .shouldHave(text(TEST_BODY + "Шаг 2: Ожидаемый результат"));
+        casesPage.checkTitle("div.card-body h5", TEST_CASE_NAME)
+                .checkTitle( "div.card-body h2", TEST_CASE_NAME)
+                .checkDescriptionTitleCase("Информация",TEST_CASE_TITLE_INFO)
+                .checkDescriptionTitleCase("Предусловие",TEST_CASE_TITLE_PRECONDITION)
+                .checkDescriptionStepCase("Шаг № 1","Описание:",TEST_CASE_STEP_DESCRIPTION)
+                .checkDescriptionStepCase("Шаг № 1","Результат:",TEST_CASE_STEP_RESULT)
+                .checkDescriptionStepCase("Шаг № 2","Описание:",TEST_CASE_STEP_DESCRIPTION)
+                .checkDescriptionStepCase("Шаг № 2","Результат:",TEST_CASE_STEP_RESULT);
 
         executeJavaScript("window.open()");
         switchTo().window(1);
         open(PROJECT_BASE_URL + PROJECT_CASES_URL);
-        $x(("//td[text()='")+ TEST_TITLE + ("']//ancestor-or-self::tr/td/input")).click();
-        $("div.opened-view__section-header div.section-dd__button").click();
-        $$("div.section-dd__dropdown_item")
-                .findBy(text(" Удалить ")).click();
-        $$("div.modal-simple button").findBy(text(" Удалить ")).shouldHave(visible).click();
-
-
-        $x("//h5[text()='Основной раздел']//following::div[@class='section-dd__button']").click();
-        $$("div.section-dd__dropdown_item")
-                .findBy(text(" Удалить раздел ")).click();
-        $$("div.modal-simple button").findBy(text(" Ок ")).shouldHave(visible).click();
-
-
-
-       int a=1;
-
-        leftNavigationSideBar(links);
-        printList(links);
+        casesPage.deleteTestCase(TEST_CASE_NAME)
+                .deleteSection("Основной раздел");
     }
 
 }
