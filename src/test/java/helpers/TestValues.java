@@ -1,6 +1,10 @@
 package helpers;
 
+import static helpers.StringModifier.*;
+
 public class TestValues {
+    public static String TEST_ACTUAL_DATE_DD_MM_YYYY = "";
+    public static String TEST_ACTUAL_DATE_DD_MM_YYYY_HM = "";
     public static String TEST_BODY = "Тестовое сообщение 101!";
     public static String TEST_TITLE = "Тестовый заголовок";
 

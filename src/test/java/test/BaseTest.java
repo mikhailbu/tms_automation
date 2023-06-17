@@ -5,6 +5,7 @@ import com.codeborne.selenide.ElementsCollection;
 import org.junit.jupiter.api.BeforeAll;
 import pages.CasesPage;
 import pages.LoginPage;
+import pages.MilestonePage;
 import pages.WorkspacePage;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class BaseTest {
     LoginPage loginPage = new LoginPage();
     WorkspacePage workspacePage = new WorkspacePage();
     CasesPage casesPage = new CasesPage();
+    MilestonePage milestonePage = new MilestonePage();
 
     @BeforeAll
     static void beforeAll() {

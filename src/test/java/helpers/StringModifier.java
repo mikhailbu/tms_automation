@@ -1,15 +1,19 @@
 
 package helpers;
 
-//import readProperties.ConfigProvider;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 public class StringModifier {
 
-//    public static String getUniqueString(String str) {
-//        return str + new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-//    }
+    public static String getActualDateDayMonthYear() {
+        return new SimpleDateFormat("dd.MM.yyyy").format(new Date());
+    }
+    public static String getActualDateDayMonthYearHourMinute() {
+        return new SimpleDateFormat("dd.MM.yyyy HH:mm").format(new Date());
+    }
+
 
     public static void emailAndLoginRandom() {
         Random random = new Random();
