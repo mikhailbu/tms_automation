@@ -22,14 +22,15 @@ public class CreateMilestoneTest extends BaseTest {
 
         TEST_ACTUAL_DATE_DD_MM_YYYY = StringModifier.getActualDateDayMonthYear();
         milestonePage.clickBtn("Добавить milestone")
-                .setNameMilestone("NameMilestone")
-                .setDescriptionMilestone("Информация ", "DescMilestone")
+                .setNameMilestone(TEST_MILESTONE_NAME)
+                .setDescriptionMilestone("Информация ", TEST_MILESTONE_TITLE_INFO)
                 .setDateMilestone(TEST_ACTUAL_DATE_DD_MM_YYYY);
+        //добавить статус
         executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
         TEST_ACTUAL_DATE_DD_MM_YYYY_HM = StringModifier.getActualDateDayMonthYearHourMinute();
         milestonePage.clickBtn("Сохранить и перейти к записи")
-                .checkTitle("div.container-fluid h5", "NameMilestone")
-                .checkDescriptionTitleMilestone("Информация", "DescMilestone")
+                .checkTitle("div.container-fluid h5", TEST_MILESTONE_NAME)
+                .checkDescriptionTitleMilestone("Информация", TEST_MILESTONE_TITLE_INFO)
                 .checkLoginAuthorMilestone(TEST_LOGIN)
                 .checkInfoMilestone("Статус:", "-")
                 .checkInfoMilestone("Дата создания:", TEST_ACTUAL_DATE_DD_MM_YYYY_HM)
@@ -42,6 +43,5 @@ public class CreateMilestoneTest extends BaseTest {
     }
 
 }
-//todo дописать проверки, удаление
 
 

@@ -49,10 +49,20 @@ public class TestValues {
 
 
 
-    public static String TEST_CASE_TITLE_INFO = TEST_BODY + "Информация";
+    public static String TEST_CASE_TITLE_INFO = "Информация о тест кейсе";
     public static String TEST_CASE_NAME = "Новый тест кейс";
-    public static String TEST_CASE_TITLE_PRECONDITION = TEST_BODY + "Предусловие";
+    public static String TEST_CASE_TITLE_PRECONDITION = "Предусловие тест кейса";
     public static String TEST_CASE_STEP_DESCRIPTION = "Описание шага";
     public static String TEST_CASE_STEP_RESULT = "Результат шага";
+    public static String TEST_CASE_BASIC_SECTION = "Основной раздел";
+
+
+    public static String TEST_MILESTONE_TITLE_INFO = "Информация о тест Milestone";
+    public static String TEST_MILESTONE_NAME = "Новый Milestone";
+    public static String TEST_STATUS_MILESTONE = "";
+
+
+    public static String TEST_TEST_PLAN_TITLE_INFO = "Информация о тест-плане";
+    public static String TEST_TEST_PLAN_NAME = "Новый тест-план";
 
 }
