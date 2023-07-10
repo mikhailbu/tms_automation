@@ -36,6 +36,7 @@ public class TestPlanPage {
         $x("//div[@class='card-body']//td[text()='"+titleDescription+"']//self::td")
                 .shouldHave(text(description));
         return this;
+        //todo переделать на поиск по списку
     }
 
     public TestPlanPage clickBtn(String nameBtn){

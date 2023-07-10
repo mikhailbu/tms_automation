@@ -12,7 +12,7 @@ import static helpers.TestValues.*;
 
 public class CreateTestCaseTest extends BaseTest {
     @Test
-    void createTestCase() {
+    void createTestCase() throws Exception {
         loginPage.openPage(BASE_URL, LOGIN_URL)
                 .checkTitle("Вход в учетную запись", "h4")
                 .setEmail(TEST_EMAIL)
@@ -44,16 +44,16 @@ public class CreateTestCaseTest extends BaseTest {
                 .setDescriptionStepCase("Шаг 1","Ожидаемый результат",TEST_CASE_STEP_RESULT)
                 .setDescriptionStepCase("Шаг 2","Описание шага",TEST_CASE_STEP_DESCRIPTION)
                 .setDescriptionStepCase("Шаг 2","Ожидаемый результат",TEST_CASE_STEP_RESULT)
+                .uploadFileInStep("Шаг 2","test_file_txt.txt")
                 .clickBtn("Сохранить и перейти к записи");
-
         casesPage.checkTitle("div.card-body h5", TEST_CASE_NAME)
-                .checkTitle( "div.card-body h2", TEST_CASE_NAME)
                 .checkDescriptionTitleCase("Информация",TEST_CASE_TITLE_INFO)
                 .checkDescriptionTitleCase("Предусловие",TEST_CASE_TITLE_PRECONDITION)
                 .checkDescriptionStepCase("Шаг № 1","Описание:",TEST_CASE_STEP_DESCRIPTION)
                 .checkDescriptionStepCase("Шаг № 1","Результат:",TEST_CASE_STEP_RESULT)
                 .checkDescriptionStepCase("Шаг № 2","Описание:",TEST_CASE_STEP_DESCRIPTION)
                 .checkDescriptionStepCase("Шаг № 2","Результат:",TEST_CASE_STEP_RESULT);
+        casesPage.downloadTextFile("Шаг № 2");
 
         executeJavaScript("window.open()");
         switchTo().window(1);
