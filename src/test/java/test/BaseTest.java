@@ -15,6 +15,7 @@ public class BaseTest {
     CasesPage casesPage = new CasesPage();
     MilestonePage milestonePage = new MilestonePage();
     TestPlanPage testPlanPage = new TestPlanPage();
+    TestRunPage testRunPage = new TestRunPage();
 
     @BeforeAll
     static void beforeAll() {

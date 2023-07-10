@@ -65,4 +65,8 @@ public class TestValues {
     public static String TEST_TEST_PLAN_TITLE_INFO = "Информация о тест-плане";
     public static String TEST_TEST_PLAN_NAME = "Новый тест-план";
 
+
+    public static String TEST_TEST_RUN_TITLE_INFO = "Информация о тест-ране";
+    public static String TEST_TEST_RUN_NAME = "Новый тест-ран";
+
 }

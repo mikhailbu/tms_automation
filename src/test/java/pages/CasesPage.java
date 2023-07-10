@@ -1,10 +1,20 @@
 package pages;
 
+import com.codeborne.selenide.SelenideElement;
+
+import javax.lang.model.element.Element;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.TestValues.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class CasesPage {
 
@@ -77,5 +87,28 @@ public class CasesPage {
 
         return this;
     }
+
+    public CasesPage uploadFileInStep (String stepName ,String pathFile) {
+        $x("//div[text()='"+stepName+"']/..//div[@class='files-group']//button").click();
+        $("input[type='file']").uploadFromClasspath(pathFile);
+        $$("div.modal-footer button").findBy(text(" Загрузить ")).click();
+        return this;
+    }
+
+    public CasesPage downloadTextFile  (String stepName) throws Exception {
+        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+        executeJavaScript("document.querySelector('div.file__info').style.display='flex'");
+       File textfile = $("div.file__info a").scrollIntoView(false).download();
+        try (InputStream input = new FileInputStream(textfile)) {
+            byte[] fileContent = input.readAllBytes();
+            String strContent = new String(fileContent, StandardCharsets.UTF_8);
+            assertThat(strContent).contains("Текст файла");
+            //todo BufferedReader add and xls parser
+
+        }
+        return this;
+
+    }
+
 
 }
