@@ -18,6 +18,7 @@ public class RegistrationTest extends BaseTest {
     @Owner("buyanovMV")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Тест на регистрацию пользователя с рандомными данными")
+
     void registrationRandomValueTest() {
         List<String> links = new ArrayList<>();
 
