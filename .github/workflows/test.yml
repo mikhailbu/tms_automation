@@ -17,12 +17,12 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: gh-pages
-          path: gh-pages
+          ref: master
+          path: master
       - uses: simple-elf/allure-report-action@master
         if: always()
         with:
-          gh_pages: gh-pages
+          gh_pages: master
           allure_results: build/allure-results
           allure_report: allure-report
           allure_history: allure-history
@@ -30,5 +30,5 @@ jobs:
         if: always()
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: gh-pages
+          PUBLISH_BRANCH: master
           PUBLISH_DIR: allure-history
