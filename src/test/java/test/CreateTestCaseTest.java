@@ -1,5 +1,10 @@
 package test;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -12,6 +17,10 @@ import static helpers.TestValues.*;
 
 public class CreateTestCaseTest extends BaseTest {
     @Test
+    @Feature("Тестироване сущности 'TEST_CASE'")
+    @Owner("buyanovMV")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Тестироване создания новой сущности 'TEST_CASE'")
     void createTestCase() throws Exception {
         loginPage.openPage(BASE_URL, LOGIN_URL)
                 .checkTitle("Вход в учетную запись", "h4")
