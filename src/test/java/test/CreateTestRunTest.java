@@ -1,6 +1,11 @@
 package test;
 
 import helpers.StringModifier;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -12,6 +17,10 @@ import static helpers.TestValues.TEST_NAME_SHORT_PROJECT;
 public class CreateTestRunTest extends BaseTest {
 
     @Test
+    @Feature("Тестироване сущности 'TEST_RUN'")
+    @Owner("buyanovMV")
+    @Severity(SeverityLevel.BLOCKER)
+    @DisplayName("Тестироване создания новой сущности 'TEST_RUN'")
     void createTestRunTest() {
 
         loginPage.openPage(BASE_URL, LOGIN_URL)

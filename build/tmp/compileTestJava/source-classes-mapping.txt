@@ -12,10 +12,12 @@ helpers/StringModifier.java
  helpers.StringModifier
 helpers/TestValues.java
  helpers.TestValues
+pages/CasesPage.java
+ pages.CasesPage
 test/LoginTest.java
  test.LoginTest
-test/CreateWorkspaceTest.java
- test.CreateWorkspaceTest
+test/CreateTestCaseTest.java
+ test.CreateTestCaseTest
 test/RegistrationTest.java
  test.RegistrationTest
 test/CreateTestRunTest.java
@@ -28,7 +30,5 @@ test/CreateTestPlanTest.java
  test.CreateTestPlanTest
 test/BaseTest.java
  test.BaseTest
-pages/CasesPage.java
- pages.CasesPage
-test/CreateTestCaseTest.java
- test.CreateTestCaseTest
+test/CreateWorkspaceTest.java
+ test.CreateWorkspaceTest

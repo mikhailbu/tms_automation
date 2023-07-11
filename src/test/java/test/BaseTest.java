@@ -2,6 +2,7 @@ package test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.ElementsCollection;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import pages.*;
 
@@ -22,6 +23,10 @@ public class BaseTest {
 //        Configuration.baseUrl = "https://firetms.ru";
         Configuration.browserSize = "1980x1080";
 
+    }
+    @AfterAll
+    static void afterAll(){
+        closeWindow();
     }
 
     public BaseTest leftNavigationSideBar(List<String> list) {
