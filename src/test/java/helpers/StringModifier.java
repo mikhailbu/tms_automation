@@ -32,6 +32,15 @@ public class StringModifier {
         System.out.println("Новый nameWorkSpace:" + TestValues.NEW_NAME_WORKSPACES);
         System.out.println("Новый nameShortWorkSpace:" + TestValues.NEW_NAME_SHORT_WORKSPACES);
 
+    }    public static void nameProjectAndShortNameProjectRandom() {
+        Random random = new Random();
+        String randomNumber = String.valueOf(random.nextInt(10000));
+        String randomNumberShort = String.valueOf(random.nextInt(999));
+        TestValues.NEW_TEST_NAME_PROJECT = ("PROJECT" + randomNumber);
+        TestValues.NEW_TEST_NAME_SHORT_PROJECT = ("pr" + randomNumberShort);;
+        System.out.println("Новый nameProject:" + TestValues.NEW_TEST_NAME_PROJECT);
+        System.out.println("Новый nameProject:" + TestValues.NEW_TEST_NAME_SHORT_PROJECT);
+
     }
     public static void phoneRandom(){
         Random random = new Random();

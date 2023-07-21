@@ -42,7 +42,7 @@ public class CreateTestRunTest extends BaseTest {
         $x("//button[text()=' Добавить тест-кейсы ']").click();
         testRunPage.selectTestCase(TEST_CASE_NAME);
         $x("//button[text()=' Готово ']").click();
-        // проверка количества выбранных тест-кейсов
+        //todo нужна проверка количества выбранных тест-кейсов
         TEST_ACTUAL_DATE_DD_MM_YYYY_HM = StringModifier.getActualDateDayMonthYearHourMinute();
         testRunPage.clickBtn("Сохранить и перейти к записи");
         testRunPage.checkTitle("h3",TEST_TEST_RUN_NAME);

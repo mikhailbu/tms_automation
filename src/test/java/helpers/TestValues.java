@@ -25,6 +25,8 @@ public class TestValues {
     public static String NEW_TEST_PHONE = "";
     public static String NEW_NAME_WORKSPACES = "";
     public static String NEW_NAME_SHORT_WORKSPACES = "";
+    public static String NEW_TEST_NAME_PROJECT = "";
+    public static String NEW_TEST_NAME_SHORT_PROJECT = "";
 
 
     public static String BASE_URL = "https://firetms.ru";

@@ -35,7 +35,7 @@ public class CreateMilestoneTest extends BaseTest {
                 .setNameMilestone(TEST_MILESTONE_NAME)
                 .setDescriptionMilestone("Информация ", TEST_MILESTONE_TITLE_INFO)
                 .setDateMilestone(TEST_ACTUAL_DATE_DD_MM_YYYY);
-        //добавить статус
+        //todo добавить статус
         executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
         TEST_ACTUAL_DATE_DD_MM_YYYY_HM = StringModifier.getActualDateDayMonthYearHourMinute();
         milestonePage.clickBtn("Сохранить и перейти к записи")

@@ -4,6 +4,7 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import static helpers.TestValues.*;
 
 
 public class RegistrationTest extends BaseTest {
+    @Disabled("Ввели верификацию по номеру телефона")
     @Test
     @Feature("Тестирование формы логирования")
     @Owner("buyanovMV")

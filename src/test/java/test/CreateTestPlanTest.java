@@ -36,7 +36,7 @@ public class CreateTestPlanTest extends BaseTest {
         $x("//button[text()=' Добавить тест-кейсы ']").click();
         testPlanPage.selectTestCase(TEST_CASE_NAME);
         $x("//button[text()=' Готово ']").click();
-        // проверка количества выбранных тест-кейсов
+        //todo нужна проверка количества выбранных тест-кейсов
         testPlanPage.clickBtn("Сохранить и перейти к записи");
 
         testPlanPage.checkTitle("h3",TEST_NAME_PROJECT)
