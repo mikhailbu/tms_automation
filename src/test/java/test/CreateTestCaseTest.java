@@ -4,7 +4,9 @@ import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -16,19 +18,18 @@ import static com.codeborne.selenide.Selenide.*;
 import static helpers.TestValues.*;
 
 public class CreateTestCaseTest extends BaseTest {
+
     @Test
+    @Tag("testCase")
     @Feature("Тестироване сущности 'TEST_CASE'")
     @Owner("buyanovMV")
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Тестироване создания новой сущности 'TEST_CASE'")
+
     void createTestCase() throws Exception {
-        loginPage.openPage(BASE_URL, LOGIN_URL)
-                .checkTitle("Вход в учетную запись", "h4")
-                .setEmail(TEST_EMAIL)
-                .setPasswordFirst(TEST_PASSWORD);
-        workspacePage.switchSideMenu("Мои пространства")
-                .selectWorkspace(TEST_NAME_WORKSPACES);
-        $$("td.align-middle div div").findBy(text(TEST_NAME_SHORT_PROJECT)).doubleClick();
+        openMenuTestCase(1);
+        CreateProjectTest createProjectTest = new CreateProjectTest();
+        createProjectTest.loginAndCreateTestProject();
         casesPage.clickBtn("+ Раздел");
         casesPage.checkTitle( "div.modal-simple__content h5", "Новый раздел");
         casesPage.setNameSection(TEST_NAME_BASIC_SECTION)
@@ -39,7 +40,7 @@ public class CreateTestCaseTest extends BaseTest {
                 .clickBtn("+ Кейс")
                 .checkTitle("div.card-header h5","Новая запись");
 
-        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+//        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
         casesPage.selectOptionCase("section","Основной раздел")
                 .selectOptionCase("status_id","Draft")
                 .selectOptionCase("type_id","Smoke")
@@ -64,9 +65,14 @@ public class CreateTestCaseTest extends BaseTest {
                 .checkDescriptionStepCase("Шаг № 2","Результат:",TEST_CASE_STEP_RESULT);
         casesPage.downloadTextFile("Шаг № 2");
 
+    }
+    void openMenuTestCase(int numberTabSwitch){
         executeJavaScript("window.open()");
-        switchTo().window(1);
+        switchTo().window(numberTabSwitch);
         open(PROJECT_BASE_URL + PROJECT_CASES_URL);
+    }
+    void cleanOldTestCase(){
+        openMenuTestCase(1);
         casesPage.deleteTestCase(TEST_CASE_NAME)
                 .deleteSection("Основной раздел");
     }

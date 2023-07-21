@@ -54,6 +54,10 @@ public class WorkspacePage {
         $(byText(nameWorkspace)).click();
         return this;
     }
+    public WorkspacePage selectProject(String nameWorkspace){
+        $(byText(nameWorkspace)).click();
+        return this;
+    }
     public WorkspacePage createProject(String nameBtn){
         $(byTagAndText("button", nameBtn)).click();
         return this;

@@ -32,10 +32,9 @@ dependencies {
             'io.qameta.allure:allure-selenide:2.23.0'
     )
 }
-
 test {
-    useJUnitPlatform(){
-        includeTags("login","workspace","project")
+    useJUnitPlatform() {
+        includeTags("login", "workspace", "project","testCase","testPlan")
     }
     systemProperties(System.getProperties())
 }

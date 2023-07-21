@@ -96,7 +96,7 @@ public class CasesPage {
     }
 
     public CasesPage downloadTextFile  (String stepName) throws Exception {
-        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+//        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
         executeJavaScript("document.querySelector('div.file__info').style.display='flex'");
        File textfile = $("div.file__info a").scrollIntoView(false).download();
         try (InputStream input = new FileInputStream(textfile)) {
