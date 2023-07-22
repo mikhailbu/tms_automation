@@ -1,5 +1,6 @@
 package test;
 
+import helpers.StringModifier;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -8,10 +9,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static helpers.TestValues.*;
-import static helpers.TestValues.TEST_NAME_SHORT_PROJECT;
 
 public class CreateTestPlanTest extends BaseTest {
 
@@ -24,15 +23,26 @@ public class CreateTestPlanTest extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Тестироване создания новой сущности 'TEST_PLAN'")
 
-    void createTestPlanTest () throws Exception{
+    void createNewTestPlanTest () throws Exception{
         LoginTest loginTest = new LoginTest();
         loginTest.loginAccount();
 
         CreateTestCaseTest createTestCaseTest = new CreateTestCaseTest();
+        createTestCaseTest.openMenuTestCase(1);
+
+        CreateProjectTest createProjectTest = new CreateProjectTest();
+        StringModifier.nameWorkspaceAndShortNameWorkSpaceRandom();
+        createProjectTest.cleanOldProject();
+        switchTo().window(0);
+        createProjectTest.createProject(TEST_NAME_PROJECT,TEST_NAME_SHORT_PROJECT,TEST_NAME_WORKSPACES);
+        createProjectTest.checkProject(TEST_NAME_PROJECT,TEST_NAME_WORKSPACES);
+
         createTestCaseTest.createTestCase();
 
         CreateMilestoneTest createMilestoneTest = new CreateMilestoneTest();
+        createMilestoneTest.openMenuMilestone(1);
         createMilestoneTest.createMilestone();
+        createMilestoneTest.checkMilestone();
 
 //        CreateTestCaseTest createTestCaseTest = new CreateTestCaseTest();
 //        createTestCaseTest.createTestCase();
@@ -52,11 +62,6 @@ public class CreateTestPlanTest extends BaseTest {
 
 
     void createTestPlan(){
-//        workspacePage.switchSideMenu("Мои пространства")
-//                .selectWorkspace(TEST_NAME_WORKSPACES);
-//        $$("td.align-middle div div").findBy(text(TEST_NAME_SHORT_PROJECT)).doubleClick();
-//        $("div.left-sidebar__menu-item[title='Тест-планы']").click();
-
         testPlanPage.clickBtn("Добавить тест-план")
                 .setNameTestPlan(TEST_TEST_PLAN_NAME);
 //        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");

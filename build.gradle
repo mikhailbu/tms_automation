@@ -34,7 +34,7 @@ dependencies {
 }
 test {
     useJUnitPlatform() {
-        includeTags("login", "workspace", "project","testCase","testPlan")
+        includeTags("login", "workspace", "project","testCase","testPlan","milestone")
     }
     systemProperties(System.getProperties())
 }
