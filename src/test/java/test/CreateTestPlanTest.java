@@ -27,8 +27,6 @@ public class CreateTestPlanTest extends BaseTest {
         LoginTest loginTest = new LoginTest();
         loginTest.loginAccount();
 
-        CreateTestCaseTest createTestCaseTest = new CreateTestCaseTest();
-        createTestCaseTest.openMenuTestCase(1);
 
         CreateProjectTest createProjectTest = new CreateProjectTest();
         StringModifier.nameWorkspaceAndShortNameWorkSpaceRandom();
@@ -37,16 +35,14 @@ public class CreateTestPlanTest extends BaseTest {
         createProjectTest.createProject(TEST_NAME_PROJECT,TEST_NAME_SHORT_PROJECT,TEST_NAME_WORKSPACES);
         createProjectTest.checkProject(TEST_NAME_PROJECT,TEST_NAME_WORKSPACES);
 
-        createTestCaseTest.createTestCase();
-
         CreateMilestoneTest createMilestoneTest = new CreateMilestoneTest();
         createMilestoneTest.openMenuMilestone(1);
         createMilestoneTest.createMilestone();
         createMilestoneTest.checkMilestone();
 
-//        CreateTestCaseTest createTestCaseTest = new CreateTestCaseTest();
-//        createTestCaseTest.createTestCase();
-//        switchTo().window(0);
+        CreateTestCaseTest createTestCaseTest = new CreateTestCaseTest();
+        createTestCaseTest.openMenuTestCase(1);
+        createTestCaseTest.createTestCase();
 
         openMenuTestPlan(0);
         createTestPlan();

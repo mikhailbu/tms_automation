@@ -1,5 +1,5 @@
-pages/WorkspacePage.java
- pages.WorkspacePage
+pages/MilestonePage.java
+ pages.MilestonePage
 pages/SettingProjectPage.java
  pages.SettingProjectPage
 pages/CasesPage.java
@@ -26,11 +26,11 @@ test/CreateMilestoneTest.java
  test.CreateMilestoneTest
 test/CreateProjectTest.java
  test.CreateProjectTest
-test/CreateTestPlanTest.java
- test.CreateTestPlanTest
+pages/WorkspacePage.java
+ pages.WorkspacePage
 test/BaseTest.java
  test.BaseTest
 test/CreateWorkspaceTest.java
  test.CreateWorkspaceTest
-pages/MilestonePage.java
- pages.MilestonePage
+test/CreateTestPlanTest.java
+ test.CreateTestPlanTest
