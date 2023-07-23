@@ -51,7 +51,7 @@ public class WorkspacePage {
         return this;
     }
     public WorkspacePage selectWorkspace(String nameWorkspace){
-        $(byText(nameWorkspace)).click();
+        $(byText(nameWorkspace)).shouldBe(visible).click();
         return this;
     }
     public WorkspacePage selectProject(String nameWorkspace){

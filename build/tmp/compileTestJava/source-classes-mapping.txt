@@ -26,11 +26,11 @@ test/CreateMilestoneTest.java
  test.CreateMilestoneTest
 test/CreateProjectTest.java
  test.CreateProjectTest
-pages/WorkspacePage.java
- pages.WorkspacePage
+test/CreateTestPlanTest.java
+ test.CreateTestPlanTest
 test/BaseTest.java
  test.BaseTest
 test/CreateWorkspaceTest.java
  test.CreateWorkspaceTest
-test/CreateTestPlanTest.java
- test.CreateTestPlanTest
+pages/WorkspacePage.java
+ pages.WorkspacePage
