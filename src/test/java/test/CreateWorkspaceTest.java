@@ -9,8 +9,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import static helpers.TestValues.*;
-import static helpers.TestValues.TEST_PASSWORD;
+import static helpers.TestValues.NEW_NAME_SHORT_WORKSPACES;
+import static helpers.TestValues.NEW_NAME_WORKSPACES;
 
 public class CreateWorkspaceTest extends BaseTest{
 
@@ -21,7 +21,7 @@ public class CreateWorkspaceTest extends BaseTest{
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Тестироване создания новой сущности 'WORKSPACE'")
 
-    void loginAndCreateTestWorkspace() {
+    void CreateTestNewWorkspace() {
         StringModifier.nameWorkspaceAndShortNameWorkSpaceRandom();
         LoginTest loginTest = new LoginTest();
         loginTest.loginAccount();
