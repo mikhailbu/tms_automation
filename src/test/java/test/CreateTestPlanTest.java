@@ -34,6 +34,7 @@ public class CreateTestPlanTest extends BaseTest {
         switchTo().window(0);
         createProjectTest.createProject(TEST_NAME_PROJECT,TEST_NAME_SHORT_PROJECT,TEST_NAME_WORKSPACES);
         createProjectTest.checkProject(TEST_NAME_PROJECT,TEST_NAME_WORKSPACES);
+        switchTo().window(0);
 
         CreateMilestoneTest createMilestoneTest = new CreateMilestoneTest();
         createMilestoneTest.openMenuMilestone(1);
