@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Mon Jul 24 10:11:39 GMT 2023","Mon Jul 24 10:11:49 GMT 2023","10601","","test.CreateWorkspaceTest","","test.CreateWorkspaceTest","CreateTestNewWorkspace","Тестироване создания новой сущности 'WORKSPACE'",""
+"failed","Mon Jul 24 10:10:53 GMT 2023","Mon Jul 24 10:11:09 GMT 2023","16289","","test.CreateTestPlanTest","","test.CreateTestPlanTest","createNewTestPlanTest","Тестироване создания новой сущности 'TEST_PLAN'",""
+"failed","Mon Jul 24 10:10:01 GMT 2023","Mon Jul 24 10:10:25 GMT 2023","23212","","test.CreateMilestoneTest","","test.CreateMilestoneTest","createNewMilestoneTest","Тестироване создания новой сущности 'MILESTONE'",""
+"passed","Mon Jul 24 10:11:09 GMT 2023","Mon Jul 24 10:11:31 GMT 2023","21094","","test.CreateProjectTest","","test.CreateProjectTest","CreateNewProjectTest","Тестироване сущности 'PROJECT' с созданием нового Workspace",""
+"passed","Mon Jul 24 10:10:25 GMT 2023","Mon Jul 24 10:10:53 GMT 2023","28118","","test.CreateTestCaseTest","","test.CreateTestCaseTest","createNewTestCaseTest","Тестироване создания новой сущности 'TEST_CASE'",""
+"passed","Mon Jul 24 10:11:31 GMT 2023","Mon Jul 24 10:11:39 GMT 2023","7942","","test.LoginTest","","test.LoginTest","loginTest","Тест на логин зарегистрированного пользователя",""
