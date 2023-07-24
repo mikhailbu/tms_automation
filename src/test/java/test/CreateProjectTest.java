@@ -46,9 +46,8 @@ public class CreateProjectTest extends BaseTest {
                 .clickBtn("Создать");
     }
     void checkProject(String nameProject,String nameWorkspace){
-        executeJavaScript("window.open()");
-        switchTo().window(1);
         workspacePage.openPage(BASE_URL,WORKSPACES_URL);
+        refresh();
         workspacePage.selectWorkspace(nameWorkspace)
                 .checkTitle(nameWorkspace,"h3")
                 .selectProject(nameProject)
