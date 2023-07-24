@@ -1,22 +1,22 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
-
-import javax.lang.model.element.Element;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selenide.*;
-import static helpers.TestValues.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CasesPage {
+
+    public CasesPage openPage(String baseUrl, String openUrl) {
+        open(baseUrl+openUrl);
+        return this;
+    }
+
 
     public CasesPage checkTitle(String tagTitle, String nameTitle) {
         $(tagTitle).shouldHave(text(nameTitle));
@@ -33,7 +33,7 @@ public class CasesPage {
         return this;
     }
     public CasesPage clickBtn(String nameBtn){
-        $(byTagAndText("button", nameBtn)).shouldHave(visible).click();
+        $x("//button[contains(text(),'"+nameBtn+"')]").click();
         return this;
     }
     public CasesPage setNameSection(String name){
@@ -96,7 +96,7 @@ public class CasesPage {
     }
 
     public CasesPage downloadTextFile  (String stepName) throws Exception {
-        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
+//        executeJavaScript("document.querySelector('footer.site-footer').style.display = 'none'");
         executeJavaScript("document.querySelector('div.file__info').style.display='flex'");
        File textfile = $("div.file__info a").scrollIntoView(false).download();
         try (InputStream input = new FileInputStream(textfile)) {

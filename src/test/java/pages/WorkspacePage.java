@@ -39,7 +39,7 @@ public class WorkspacePage {
         return this;
     }
     public WorkspacePage switchSideMenu (String nameBtn){
-        $(byText(nameBtn)).click();
+        $("div.left-sidebar__menu-item[title='"+nameBtn+"']").click();
         return this;
     }
     public WorkspacePage switchTabWorkspace (String nameBtn){
@@ -51,6 +51,10 @@ public class WorkspacePage {
         return this;
     }
     public WorkspacePage selectWorkspace(String nameWorkspace){
+        $(byText(nameWorkspace)).shouldBe(visible).click();
+        return this;
+    }
+    public WorkspacePage selectProject(String nameWorkspace){
         $(byText(nameWorkspace)).click();
         return this;
     }

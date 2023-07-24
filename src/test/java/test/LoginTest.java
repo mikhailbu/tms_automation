@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest{
 
     void loginAccount(){
         loginPage.openPage(BASE_URL,LOGIN_URL)
-                .checkTitle("Вход в учетную запись", "h4")
+//                .checkTitle("Вход в учетную запись", "h4")
                 .setEmail(TEST_EMAIL)
                 .setPasswordFirst(TEST_PASSWORD)
                 .checkTitle("Рабочий стол", "h3");

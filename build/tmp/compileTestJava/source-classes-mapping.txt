@@ -1,17 +1,19 @@
 pages/MilestonePage.java
  pages.MilestonePage
-pages/CasesPage.java
- pages.CasesPage
-pages/WorkspacePage.java
- pages.WorkspacePage
-pages/TestRunPage.java
- pages.TestRunPage
-pages/TestPlanPage.java
- pages.TestPlanPage
-test/BaseTest.java
- test.BaseTest
 pages/SettingProjectPage.java
  pages.SettingProjectPage
+pages/CasesPage.java
+ pages.CasesPage
+pages/LoginPage.java
+ pages.LoginPage
+pages/TestPlanPage.java
+ pages.TestPlanPage
+helpers/StringModifier.java
+ helpers.StringModifier
+helpers/TestValues.java
+ helpers.TestValues
+pages/TestRunPage.java
+ pages.TestRunPage
 test/LoginTest.java
  test.LoginTest
 test/CreateTestCaseTest.java
@@ -22,15 +24,13 @@ test/CreateTestRunTest.java
  test.CreateTestRunTest
 test/CreateMilestoneTest.java
  test.CreateMilestoneTest
-test/CreateWorkspaceTest.java
- test.CreateWorkspaceTest
-test/CreateTestPlanTest.java
- test.CreateTestPlanTest
-helpers/StringModifier.java
- helpers.StringModifier
-helpers/TestValues.java
- helpers.TestValues
-pages/LoginPage.java
- pages.LoginPage
 test/CreateProjectTest.java
  test.CreateProjectTest
+test/CreateTestPlanTest.java
+ test.CreateTestPlanTest
+test/BaseTest.java
+ test.BaseTest
+test/CreateWorkspaceTest.java
+ test.CreateWorkspaceTest
+pages/WorkspacePage.java
+ pages.WorkspacePage
