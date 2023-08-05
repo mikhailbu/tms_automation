@@ -29,12 +29,14 @@ dependencies {
             'org.junit.jupiter:junit-jupiter:5.9.3',
             'com.codeborne:selenide:6.13.1',
             'org.assertj:assertj-core:3.24.2',
-            'io.qameta.allure:allure-selenide:2.23.0'
+            'io.qameta.allure:allure-selenide:2.23.0',
+            'com.sun.mail:javax.mail:1.6.2',
+            'org.jsoup:jsoup:1.16.1'
     )
 }
 test {
     useJUnitPlatform() {
-        includeTags("login", "workspace", "project","testCase","testPlan","milestone")
+        includeTags("login", "workspace", "project","testCase","testPlan","milestone","email")
     }
     systemProperties(System.getProperties())
 }
